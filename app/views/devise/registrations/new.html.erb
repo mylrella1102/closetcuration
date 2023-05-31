@@ -42,6 +42,9 @@
     <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
+      <%= render 'shared/error_messages', model: f.object %>
+
+
     <div class="form-floating">
           <%= f.text_field :nickname, class:"form-control", id:"floatingInput", placeholder:"name", maxlength:"40", autofocus: true  %>
       <label for="floatingInput">Nickname</label>
