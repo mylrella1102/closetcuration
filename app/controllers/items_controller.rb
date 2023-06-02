@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  def index
+    @items = Item.all
+  end
+
   def new
     @item = Item.new
   end
@@ -6,7 +10,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to items_path
     else
       render :new
     end
@@ -15,6 +19,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image, :name, :category_id, :color_id, :season_id)
+    params.require(:item).permit(:image, :name, :category_id, :color_id, :season_id, :info)
   end
 end
