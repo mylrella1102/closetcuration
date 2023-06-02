@@ -9,4 +9,6 @@ class Item < ApplicationRecord
 
   has_one_attached :image
 
+  has_many :posts, through: :item_posts
+
 end
