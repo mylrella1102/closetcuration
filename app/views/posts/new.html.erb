@@ -8,7 +8,7 @@
     </label>
 
     <%= f.date_field :date, class:"form-control mb-2", placeholder:"yyyy/mm/dd" %>
-    <%= f.collection_select(:weather_id, Whether.all, :id, :name, {}, {class:"form-select mb-2"}) %>
+    <%= f.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"form-select mb-2"}) %>
     <%= f.collection_select(:low_id, Low.all, :id, :name, {}, {class:"form-select mb-2"}) %>
     <%= f.collection_select(:high_id, High.all, :id, :name, {}, {class:"form-select mb-2"}) %>
     <%= f.text_area :content, class:"form-control  mb-3", placeholder:"Memo" %>
