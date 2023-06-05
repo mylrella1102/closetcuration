@@ -1,0 +1,17 @@
+<%= render "shared/sidebar" %>
+<%= form_with model: @post, url:posts_path, local: true, class: "mx-auto col-4" do |f| %>
+  <div class="post-box justify-content-center">
+    <p class="text-center mb-3 fs-2">コーディネートを編集する</p>
+
+    <label class="form-image">
+      <%= f.file_field :image, class: 'form-control mb-2' %>
+    </label>
+
+    <%= f.date_field :date, class:"form-control mb-2", placeholder:"yyyy/mm/dd" %>
+    <%= f.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"form-select mb-2"}) %>
+    <%= f.collection_select(:low_id, Low.all, :id, :name, {}, {class:"form-select mb-2"}) %>
+    <%= f.collection_select(:high_id, High.all, :id, :name, {}, {class:"form-select mb-2"}) %>
+    <%= f.text_area :content, class:"form-control  mb-3", placeholder:"Memo" %>
+    <p class= "text-center"><%= f.submit "POST" ,class:"btn btn-primary col-12" %></p>
+  </div>
+<% end %>
