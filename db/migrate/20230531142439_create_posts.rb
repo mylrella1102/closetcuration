@@ -1,7 +1,7 @@
 class CreatePosts < ActiveRecord::Migration[6.0]
   def change
     create_table :posts do |t|
-      t.integer :date
+      t.date :date
       t.integer :weather_id
       t.integer :low_id
       t.integer :high_id

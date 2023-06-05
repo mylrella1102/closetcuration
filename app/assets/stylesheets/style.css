@@ -18,3 +18,7 @@
 .deco {
   text-decoration: none;
 }
+
+.scrl {
+  overscroll-behavior-inline: auto;
+}
