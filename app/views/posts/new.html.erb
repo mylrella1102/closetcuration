@@ -10,7 +10,7 @@
     <%= f.date_field :date, class:"form-control mb-2", placeholder:"yyyy/mm/dd" %>
 
     <div class = "d-flex add-form">
-    <%= f.collection_select(:item_id, Item.all, :id, :name, {prompt: "---"}, {class:"form-select mb-2 me-2 col-11"}) %>
+    <%= f.collection_select(:item_ids, Item.all, :id, :name, {prompt: "---"}, {class:"form-select mb-2 me-2 col-11"}) %>
     <button type="button" class="btn btn-light mb-2 col-1 p-2 text-center" onclick="addForm()">＋</button>
     </div>
     <%= f.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"form-select mb-2"}) %>

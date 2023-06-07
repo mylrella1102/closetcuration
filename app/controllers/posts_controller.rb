@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.new(post_params)
     if @post.save
       redirect_to root_path
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path
     else
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:date, :item_id, :weather_id, :low_id, :high_id, :content).merge(user_id: current_user.id)
+    params.require(:post).permit(:date, :weather_id, :low_id, :high_id, :content, item_ids: []).merge(user_id: current_user.id)
   end
 
 end

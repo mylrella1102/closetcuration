@@ -48,13 +48,14 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
     t.integer "color_id"
     t.integer "season_id"
     t.text "info"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date"
-    t.integer "item_id", null: false
     t.integer "weather_id"
     t.integer "low_id"
     t.integer "high_id"
@@ -81,5 +82,6 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "item_posts", "items"
   add_foreign_key "item_posts", "posts"
+  add_foreign_key "items", "users"
   add_foreign_key "posts", "users"
 end

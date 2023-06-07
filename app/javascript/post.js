@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const addButton = document.querySelector('.btn.btn-light');
 
   // ＋ボタンを押すとフィールド追加
-  addButton.addEventListener('click', function addForm() {
+  addButton.addEventListener('click', function () {
     const inputContainer = document.querySelector('.add-form');
     const lastInput = document.getElementById('post_item_id');
 
@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
     addButton.remove();
 
     // ＋ボタンが追加フィールドの横に表示される
+    inputContainer.after(addButton);
 
   });
+
 
 });
