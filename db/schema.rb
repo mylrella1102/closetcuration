@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date"
+    t.integer "item_id", null: false
     t.integer "weather_id"
     t.integer "low_id"
     t.integer "high_id"
