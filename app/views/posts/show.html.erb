@@ -1,6 +1,11 @@
 <%= render "shared/sidebar" %>
 <div class="bg-light border rounded p-4 mx-auto">
   <div class = "d-flex flex-column">
+    <div class = "post-img">
+    <% @post.items.each do |item| %>
+      <%= image_tag item.image.variant(resize: '200x200') %> 
+    <% end %>
+    </div>
     <div class = "me-2 ">
       日付：<%= @post.date %><br>
     </div>
