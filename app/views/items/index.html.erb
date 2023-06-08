@@ -1,1 +1,21 @@
-<%= render "shared/main" %>
+  <%= render "shared/sidebar" %>
+
+  <main class="container overflow-auto">
+
+  <div class = "row">
+    <% @items.each do |item|%>
+      <%= link_to item_path(item.id), class: "text-decoration-none col-lg-3 col-md-6 row-md " do %>
+        <%= image_tag item.image.variant(resize: '200x200') %>
+        <div class="g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative row">
+          <div class="position-static p-3">
+            <h4 class="mb-1 text-muted"><%= item.name%></h4>
+            <p class="card-text mb-auto text-muted">
+            カテゴリー：<%= item.category.name %><br>
+            色：<%= item.color.name %><br>
+            季節：<%= item.season.name %></p>
+            <p class="deco card-text mb-auto text-muted"><%= item.info %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
