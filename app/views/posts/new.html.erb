@@ -9,9 +9,31 @@
 
     <%= f.date_field :date, class:"form-control mb-2", placeholder:"yyyy/mm/dd" %>
 
-    <div class = "d-flex add-form">
-    <%= f.collection_select(:item_ids, Item.all, :id, :name, {prompt: "---"}, {class:"form-select mb-2 me-2 col-11"}) %>
-    <button type="button" class="btn btn-light mb-2 col-1 p-2 text-center" onclick="addForm()">＋</button>
+    <div class = "add-form mb-2">
+      <%# <select class="form-select mb-2 me-2 col-11", name = "post[item_ids][]"> %>
+      <%# <option value = "">---</option> %>
+      <%# <select name = "post[item_ids][]"> %>
+
+  <% Item.all.each do |item| %>
+    <label class="form-check">
+      <input class="form-check-input" type="checkbox" name="post[item_ids][]" value="<%= item.id %>">
+      <%= item.name %>
+    </label>
+  <% end %>
+
+      <%# <% Item.all.each do |item| %>
+      <%# <label class="form-check">
+      <input class="form-check-input" type="checkbox" name="item_ids[]">
+      <option value = <%= item.id%>
+      <%# <%= item.name %>
+      <%# </option> %>
+      <%# </label> %>
+      <%# <% end %>
+
+      <%# , name = "post[item_ids][]" %>
+      <%# </select> %>
+      <%# <%= f.collection_select(:item_ids, Item.all, :id, :name, {prompt: "---"}, {class:"form-select mb-2 me-2 col-11"}) %> 
+      <%# <button type="button" class="btn btn-light mb-2 col-1 p-2 text-center" onclick="addForm()">＋</button> %>
     </div>
     <%= f.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"form-select mb-2"}) %>
     <%= f.collection_select(:low_id, Low.all, :id, :name, {}, {class:"form-select mb-2"}) %>
