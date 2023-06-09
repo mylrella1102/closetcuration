@@ -1,7 +1,7 @@
 <%= render "shared/sidebar" %>
-<%= form_with model: @item, url:items_path, local: true, class: "mx-auto col-4" do |f| %>
+<%= form_with model: @item, local: true, class: "mx-auto col-4" do |f| %>
   <div class="item-box justify-content-center">
-    <p class="text-center mb-3 fs-2">アイテムを登録する</p>
+    <p class="text-center mb-3 fs-2">アイテムを編集する</p>
 
     <label class="form-image">
       <%= f.file_field :image, class: 'form-control mb-2' %>
