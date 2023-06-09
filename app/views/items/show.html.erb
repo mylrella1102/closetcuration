@@ -6,7 +6,7 @@
     </div>
     <div class = "mt-3 mb-3 ">
         名前：<%= @item.name %><br>
-        カテゴリー：<%= @item.category.name %><br>
+        カテゴリー：<%= link_to @item.category.name, items_path(category_id: @item.category_id), method: :get, class: "text-decoration-none" %><br>
         色：<%= @item.color.name %><br>
         季節：<%= @item.season.name %></p>
       <% if @item.info.present? %>
@@ -21,4 +21,5 @@
       <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "btn btn-primary col-sm-5 ms-1" %>
       <%= link_to "削除", item_path(@item.id), method: :delete, class: "btn btn-danger col-sm-5 ms-1" %>
     </div>
+  </div>
 </div>
