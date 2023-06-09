@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
     if params[:color_id].present?
       @items = Item.where(color_id: params[:color_id]).order('created_at DESC')
     end
+    if params[:season_id].present?
+      @items = Item.where(season_id: params[:season_id]).order('created_at DESC')
+    end
 
   end
 
