@@ -3,6 +3,16 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order('created_at DESC')
     @posts = Post.all.order('created_at DESC')
+    if params[:category_id].present?
+      @items = Item.where(category_id: params[:category_id]).order('created_at DESC')
+    end
+    if params[:color_id].present?
+      @items = Item.where(color_id: params[:color_id]).order('created_at DESC')
+    end
+    if params[:season_id].present?
+      @items = Item.where(season_id: params[:season_id]).order('created_at DESC')
+    end
+
   end
 
   def new

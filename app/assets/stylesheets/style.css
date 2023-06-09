@@ -22,3 +22,8 @@
 .scrl {
   overscroll-behavior-inline: auto;
 }
+
+.img-size {
+  height: 200px;
+  width: 200px;
+}

@@ -1,0 +1,5 @@
+<% categories.each do |category| %>
+  <% if category.is_active == true %>
+    <%= link_to @item.category.name, items_path(category_id: category.id), class: "aaa" %>
+  <% end %>
+<% end %>
