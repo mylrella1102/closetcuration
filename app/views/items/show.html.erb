@@ -7,7 +7,7 @@
     <div class = "mt-3 mb-3 ">
         名前：<%= @item.name %><br>
         カテゴリー：<%= link_to @item.category.name, items_path(category_id: @item.category_id), method: :get, class: "text-decoration-none" %><br>
-        色：<%= @item.color.name %><br>
+        色：<%= link_to @item.color.name, items_path(color_id: @item.color_id), method: :get, class: "text-decoration-none" %><br>
         季節：<%= @item.season.name %></p>
       <% if @item.info.present? %>
         <span>メモ：<%= @item.info %></span>
