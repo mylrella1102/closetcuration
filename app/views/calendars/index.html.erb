@@ -4,20 +4,8 @@
 
   <%= render "shared/header" %>
 
-  <%# <div class="col-md-8">
-  <%= month_field events: @posts do |date,post| %>
-      <%# <%= date.day %>
-
-    <%# <% posts.each do |post| %>
-      <%# <div>
-        <%= link_to post.date, post %>
-      <%# </div>
-    <% end %>
-  <%# <% end %>
-  <%# </div> %>
-
   <%= week_calendar events: @posts do |date, posts| %>
-    <%= date.day %>
+    <%= date.day %><br>
   <% end %>
   
 </main>
