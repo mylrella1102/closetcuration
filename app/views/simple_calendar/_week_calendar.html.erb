@@ -29,13 +29,11 @@
               <% else %>
                 <% passed_block.call day, sorted_events.fetch(day, []) %>
               <% end %>
-            <% posts.each do |post| %>
-              <!-- Postテーブルの情報を表示するコード -->
+              <% posts.each do |post| %>
               <%= post.weather.name %> <%= post.low.name %>℃~<%= post.high.name %>℃ <br>
               <% post.items.each do |item| %>
                 <%= image_tag item.image.variant(resize: '90x90') %>
               <% end %>
-
             <% end %>
             <% end %>
           <% end %>

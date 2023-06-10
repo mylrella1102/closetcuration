@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   has_many :item_posts
   has_many :items, through: :item_posts
 
+  
+
   def start_time
     self.date
   end

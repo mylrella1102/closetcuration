@@ -6,6 +6,10 @@
 
   <%= week_calendar events: @posts do |date, posts| %>
     <%= date.day %><br>
+      <%# <% posts.each do |post| %>
+    <%# <%= link_to date.day, post_path(post) %>
+    <%# <% end %>
+
   <% end %>
   
 </main>

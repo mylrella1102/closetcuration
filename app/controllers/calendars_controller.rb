@@ -5,5 +5,4 @@ class CalendarsController < ApplicationController
     @posts = Post.all
   end
 
-
 end
