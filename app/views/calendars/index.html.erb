@@ -1,0 +1,15 @@
+  <%= render "shared/sidebar" %>
+
+<main class="container d-flex flex-column overflow-auto img-1 px-5 ">
+
+  <%= render "shared/header" %>
+
+  <%= week_calendar events: @posts do |date, posts| %>
+    <%= date.day %><br>
+      <%# <% posts.each do |post| %>
+    <%# <%= link_to date.day, post_path(post) %>
+    <%# <% end %>
+
+  <% end %>
+  
+</main>
