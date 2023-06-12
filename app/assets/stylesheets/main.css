@@ -16,8 +16,10 @@
 
 .post-btn {
   position: relative;
-  width: 100px;
-  height: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
   box-sizing: border-box;
   padding: 0 10px;
   text-align: center;
