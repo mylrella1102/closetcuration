@@ -1,6 +1,6 @@
 class Color < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
+    { id: 1, name: '色' },
     { id: 2, name: 'ホワイト' },
     { id: 3, name: 'ブラック' },
     { id: 5, name: 'グレー' },
