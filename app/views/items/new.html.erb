@@ -1,17 +1,17 @@
 <%= render "shared/sidebar" %>
 <%= form_with model: @item, url:items_path, local: true, class: "mx-auto col-4" do |f| %>
   <div class="item-box justify-content-center">
-    <p class="text-center mb-3 fs-2">アイテムを登録する</p>
+    <p class="text-center mb-3 fs-2">アイテム登録</p>
 
-    <label class="form-image">
+    <label class="form-image col-12">
       <%= f.file_field :image, class: 'form-control mb-2' %>
     </label>
 
-    <%= f.text_field :name, class:"form-control mb-2", placeholder:"Name" %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-select mb-2"}) %>
+    <%= f.text_field :name, class:"form-control mb-2", placeholder:"名前" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-select mb-2 "}) %>
     <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"form-select mb-2"}) %>
     <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"form-select mb-2"}) %>
-    <%= f.text_area :info, class:"form-control  mb-3", placeholder:"Memo" %>
+    <%= f.text_area :info, class:"form-control  mb-3", placeholder:"メモ" %>
     <p class= "text-center"><%= f.submit "POST" ,class:"btn btn-primary col-12" %></p>
   </div>
 <% end %>

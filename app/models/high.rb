@@ -1,6 +1,6 @@
 class High < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
+    { id: 1, name: '最高気温' },
     { id: 2, name: '0' },
     { id: 3, name: '1' },
     { id: 4, name: '2' },

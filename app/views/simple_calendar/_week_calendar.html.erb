@@ -2,9 +2,9 @@
   <div class="calendar-heading text-center">
     <%= link_to t('simple_calendar.previous', default: '前の週'), calendar.url_for_previous_view %>
     <% if calendar.number_of_weeks == 1 %>
-      <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %></span>
+    <span class="calendar-title"><%= start_date.month %>月</span>
     <% else %>
-      <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
+    <span class="calendar-title"><%= start_date.month %>月</span>
     <% end %>
     <%= link_to t('simple_calendar.next', default: '次の週'), calendar.url_for_next_view %>
   </div>
