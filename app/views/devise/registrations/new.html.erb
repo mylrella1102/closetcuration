@@ -10,8 +10,6 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
 
-    
-
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,11 +37,10 @@
     
 <main class="form-signin">
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', local: true do |f| %>
-    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <%= image_tag "main_logo1.png", class: "p-1 mx-auto" %>
     <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
       <%= render 'devise/shared/error_messages', model: f.object %>
-
 
     <div class="form-floating">
           <%= f.text_field :nickname, class:"form-control rounded mb-1", id:"floatingInput", placeholder:"name", maxlength:"40", autofocus: true  %>
@@ -68,7 +65,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+    <button class="w-100 btn btn-lg bg-primary-subtle border border-primary-subtle text-primary-emphasis" type="submit">Sign up</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
   <% end %>
 </main>

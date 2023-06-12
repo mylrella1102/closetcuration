@@ -37,7 +37,7 @@
     
 <main class="form-signin">
   <%= form_with model: @user, url: user_session_path, id: 'new_user', local: true do |f| %>
-    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <%= image_tag "main_logo1.png", class: "p-1 mx-auto" %>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <%= render 'devise/shared/error_messages', model: f.object %>
@@ -57,8 +57,8 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    <button class="w-100 btn btn-lg bg-primary-subtle border border-primary-subtle text-primary-emphasis" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
   <% end %>
 </main>
 
