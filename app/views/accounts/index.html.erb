@@ -12,9 +12,13 @@
   <div class = "row">
     <% @accounts.each do |account|%>
       <%= link_to account_path(account.id), class: "text-decoration-none col-lg-3 col-md-6 row-md " do %>
-      <%# <div class= "img-size mx-auto">
-        <%= image_tag item.image.variant(resize: '200x200') %>
-        <%# </div> %>
+      <div class= "img-size mx-auto">
+      <% if account.image.present? %>
+        <%= image_tag account.image.variant(resize: '200x200') %>
+        <% else %>
+        <%= image_tag "icon.png", variant: { resize: '200x200' } %>
+        <% end %>
+        </div>
         <div class="g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative row">
           <div class="position-static p-3">
             <h4 class="mb-1 text-muted"><%= account.name%></h4>

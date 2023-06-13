@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     if @account.save
-      redirect_to root_path
+      redirect_to accounts_path
     else
       render :new
     end
@@ -30,9 +30,9 @@ class AccountsController < ApplicationController
   end
 
   def update
-    @acocunt = Account.find(params[:id])
+    @account = Account.find(params[:id])
     if @account.update(account_params)
-      redirect_to post_path
+      redirect_to account_path
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:name, :date).merge(user_id: current_user.id)
+    params.require(:account).permit(:image, :name, :date).merge(user_id: current_user.id)
   end
 
 end
