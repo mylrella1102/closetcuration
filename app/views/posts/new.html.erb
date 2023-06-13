@@ -3,15 +3,24 @@
   <div class="post-box justify-content-center">
     <p class="text-center mb-3 fs-2">コーディネート登録</p>
 
+    <div class = "add-form row p-3">
+      <% Account.all.each do |account| %>
+        <label class="form-radio">
+          <input class="form-radio-input" type="radio" name="post[account_ids][]" value="<%= account.id %>">
+          <%# <%= image_tag account.name.variant(resize: '50x50') %>
+          <%= account.name %>
+
+
+        </label>
+      <% end %>
+
     <%= f.date_field :date, class:"form-control mb-2", placeholder:"yyyy/mm/dd" %>
 
     <div class = "add-form row p-3">
       <% Item.all.each do |item| %>
         <label class="form-check col-4">
           <input class="form-check-input" type="checkbox" name="post[item_ids][]" value="<%= item.id %>">
-          <%# <%= item.name %>
           <%= image_tag item.image.variant(resize: '50x50') %>
-
         </label>
       <% end %>
     </div>
