@@ -9,10 +9,8 @@
       </div>
         <div class="row p-3 mb-4 d-flex justify-content-center">
         <div class="col-7 row border rounded-pill bg-light d-flex justify-content-between p-4">
-          <%# <div class="lead col-md-3 d-flex justify-content-center"><a href="/items/new" data-method="get" class="fw-bold post-btn">Post ITEM</a></div> %>
           <div class="lead col-md-3 d-flex justify-content-center"><%= link_to "Post ITEM", new_item_path, method: :get, class: "fw-bold post-btn" %></div>
-          <%# <div class="lead col-md-3 d-flex justify-content-center"><a href="/posts/new" data-method="get" class="fw-bold post-btn">Post OOTD</a></div> %>
-          <div class="lead col-md-3 d-flex justify-content-center"><%= link_to "Post OOTD", new_post_path, method: :get, class: "fw-bold post-btn", data: {confirm: "先にアイテムを登録してください"} %></div>
+          <div class="lead col-md-3 d-flex justify-content-center"><%= link_to "Post OOTD", new_post_path, method: :get, class: "fw-bold post-btn" %></div>
 
         </div>
         </div>
