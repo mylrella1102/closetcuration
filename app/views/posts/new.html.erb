@@ -5,12 +5,15 @@
 
     <div class = "add-form row p-3">
       <% Account.all.each do |account| %>
-        <label class="form-radio">
+        <label class="form-radio mb-2">
           <input class="form-radio-input" type="radio" name="post[account_ids][]" value="<%= account.id %>">
-          <%# <%= image_tag account.name.variant(resize: '50x50') %>
+          <% if account.image.present? %>
+            <%= image_tag account.image.variant(resize: '50x50'), class: "rounded-circle" %>
+          <% else %>
+            <%= image_tag "icon.png", variant: { resize: '50x50' }, class: "icon-resize rounded-circle" %>
+          <% end %>
+
           <%= account.name %>
-
-
         </label>
       <% end %>
 
