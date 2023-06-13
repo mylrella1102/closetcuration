@@ -3,7 +3,20 @@
   <div class="item-box justify-content-center">
     <p class="text-center mb-3 fs-2">アイテム登録</p>
 
-    <label class="form-image col-12">
+      <div class = "add-form row p-3">
+      <% Account.all.each do |account| %>
+        <label class="form-radio mb-2">
+          <input class="form-radio-input" type="radio" name="item[account_id]" value="<%= account.id %>">
+          <% if account.image.present? %>
+            <%= image_tag account.image.variant(resize: '50x50'), class: "rounded-circle" %>
+          <% else %>
+            <%= image_tag "icon.png", variant: { resize: '50x50' }, class: "icon-resize rounded-circle" %>
+          <% end %>
+          <%= account.name %>
+        </label>
+      <% end %>
+
+    <label class="form-image p-0">
       <%= f.file_field :image, class: 'form-control mb-2' %>
     </label>
 
