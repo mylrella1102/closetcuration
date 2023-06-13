@@ -42,6 +42,9 @@
 
     <%# <%= render 'devise/shared/error_messages', model: f.object %>
 
+    <label class="form-image col-12">
+      <%= f.file_field :image, class: 'form-control mb-2' %>
+    </label>
 
     <div class="form-floating">
       <%= f.text_field :name, class:"form-control rounded mb-1", id:"floatingInput", placeholder:"名前" %>

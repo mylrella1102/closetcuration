@@ -40,6 +40,10 @@
         <%= image_tag "main_logo1.png", class: "p-1 mx-auto" %>
     <h1 class="h3 mb-3 fw-normal">アカウントの編集</h1>
 
+    <label class="form-image col-12">
+      <%= f.file_field :image, class: 'form-control mb-2' %>
+    </label>
+
     <div class="form-floating">
       <%= f.text_field :name, class:"form-control rounded mb-1", id:"floatingInput", placeholder:"名前" %>
       <label for="floatingInput">名前</label>
