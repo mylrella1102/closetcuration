@@ -3,9 +3,9 @@
   <div class = "d-flex flex-column text-center">
     <div class = "post-img">
         <% if @account.image.present? %>
-        <%= image_tag @account.image.variant(resize: '200x200') %>
+        <%= image_tag @account.image.variant(resize: '200x200'), class: "rounded-circle" %>
         <% else %>
-        <%= image_tag "icon.png", variant: { resize: '200x200' } %>
+        <%= image_tag "icon.png", variant: { resize: '200x200' }, class: "rounded-circle" %>
         <% end %>
 
     </div>

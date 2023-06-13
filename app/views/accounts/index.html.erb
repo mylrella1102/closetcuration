@@ -9,17 +9,17 @@
       </div>
 
 
-  <div class = "row">
+  <div class = "row d-flex justify-content-center">
     <% @accounts.each do |account|%>
       <%= link_to account_path(account.id), class: "text-decoration-none col-lg-3 col-md-6 row-md " do %>
       <div class= "img-size mx-auto">
       <% if account.image.present? %>
-        <%= image_tag account.image.variant(resize: '200x200') %>
+        <%= image_tag account.image.variant(resize: '200x200'), class: "rounded-circle" %>
         <% else %>
-        <%= image_tag "icon.png", variant: { resize: '200x200' } %>
+        <%= image_tag "icon.png", variant: { resize: '200x200' }, class: "rounded-circle" %>
         <% end %>
         </div>
-        <div class="g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative row">
+        <div class="g-0 flex-md-row mb-4 h-md-250 position-relative row text-center">
           <div class="position-static p-3">
             <h4 class="mb-1 text-muted"><%= account.name%></h4>
           </div>
