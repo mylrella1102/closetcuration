@@ -7,7 +7,6 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
 # 利用方法
 ## アイテム投稿
 1. トップページのサイドバーのMenuからユーザーの新規登録を行う
