@@ -1,24 +1,34 @@
-# README
+# アプリケーション名
+Closet Curation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  
+# アプリケーション概要
+持っている服を管理したり、毎日の服装を記録することができる。
 
-Things you may want to cover:
 
-* Ruby version
+# URL
+https://closetcuration.onrender.com
+# テスト用アカウント
 
-* System dependencies
+# 利用方法
+## アイテム投稿
+1. トップページのサイドバーのMenuからユーザーの新規登録を行う
+2. 「post ITEM」ボタンからアイテムの内容を入力し投稿する
+3. 「post OOTD」ボタンから今日の服装の組み合わせを投稿する
+# アプリケーションを作成した背景
 
-* Configuration
+# 洗い出した要件
 
-* Database creation
+# 実装した機能についての画像やGIFおよびその説明
 
-* Database initialization
+# 実装予定の機能
 
-* How to run the test suite
+# データベース設計
 
-* Services (job queues, cache servers, search engines, etc.)
+# 画面遷移図
 
-* Deployment instructions
+# 開発環境
 
-* ...
+# ローカルでの動作方法
+
+# 工夫したポイント

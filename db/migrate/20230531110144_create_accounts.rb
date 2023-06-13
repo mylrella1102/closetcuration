@@ -3,6 +3,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
     create_table :accounts do |t|
       t.string :name, null: false
       t.date :date
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

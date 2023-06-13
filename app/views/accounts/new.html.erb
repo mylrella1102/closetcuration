@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Signin Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <%= form_with model: @account, url: accounts_path, id: 'new_account', local: true do |f| %>
+        <%= image_tag "main_logo1.png", class: "p-1 mx-auto" %>
+    <h1 class="h3 mb-3 fw-normal">アカウントの追加</h1>
+
+    <%# <%= render 'devise/shared/error_messages', model: f.object %>
+
+
+    <div class="form-floating">
+      <%= f.text_field :name, class:"form-control rounded mb-1", id:"floatingInput", placeholder:"名前" %>
+      <label for="floatingInput">名前</label>
+    </div>
+    <div class="form-floating">
+    <%= f.date_field :date, class:"form-control mb-2", placeholder:"yyyy/mm/dd" %>
+      <label for="floatingPassword">生年月日</label>
+    </div>
+
+    <button class="w-100 btn btn-lg bg-primary-subtle border border-primary-subtle text-primary-emphasis" type="submit">追加</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+  <% end %>
+</main>
+
+
+    
+  </body>
+</html>

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :items
   resources :calendars
+  resources :accounts
 
 end

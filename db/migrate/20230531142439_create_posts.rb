@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :high_id
       t.text :content
       t.references :user, null: false, foreign_key: true
+      t.references :account, null: false, foreign_key: true
       t.timestamps
     end
   end

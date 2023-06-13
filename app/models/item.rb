@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   belongs_to :user
+  belongs_to :account
   has_many :item_posts
   has_many :posts, through: :item_posts
 
