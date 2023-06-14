@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @step = 1
   end
 
   def create
@@ -18,6 +19,14 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def step2
+    @step = 2
+    @post = Post.new(account_id: params[:account_id]) # ステップ1で選択されたアカウントIDを使用して新しいPostオブジェクトを作成
+
+    render partial: 'step2_form'
+  end
+
 
   def show
     @post = Post.find(params[:id])

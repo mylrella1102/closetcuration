@@ -1,23 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const addButton = document.querySelector('.btn.btn-light');
+function submitStep1Form() {
+  const next = document.querySelector(".next");
+  next.addEventListener('click', function (event) {
+    event.preventDefault();
+    // ステップ1のフォームデータを取得
+    var formData = new FormData(document.getElementById('step1-form'));
 
-  // ＋ボタンを押すとフィールド追加
-  addButton.addEventListener('click', function () {
-    const inputContainer = document.querySelector('.add-form');
-    const lastInput = document.getElementById('post_item_id');
-
-    const newInput = lastInput.cloneNode(true);
-
-    newInput.option
-    inputContainer.after(newInput);
-
-    // ＋ボタンを押すとボタンが消える
-    addButton.remove();
-
-    // ＋ボタンが追加フィールドの横に表示される
-    inputContainer.after(addButton);
-
+    // 非同期リクエストを送信
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/posts', true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        // レスポンスを受け取り、ステップ2の内容を取得
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open('GET', '/step2', true);
+        xhr2.onload = function () {
+          if (xhr2.status === 200) {
+            // ステップ2の内容を表示
+            console.log(xhr2.responseText);
+            document.getElementById('content').innerHTML = xhr2.responseText;
+          }
+        };
+        xhr2.send();
+      }
+    };
+    xhr.send(formData);
   });
-
-
-});
+}
+window.addEventListener("load", submitStep1Form);
