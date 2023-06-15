@@ -21,10 +21,13 @@ class PostsController < ApplicationController
   end
 
   def step2
+    puts "aaa"
     @step = 2
     @post = Post.new(account_id: params[:account_id]) # ステップ1で選択されたアカウントIDを使用して新しいPostオブジェクトを作成
-
+    @items = Item.where(account_id: params[:account_id]) # 選択されたアカウントに紐づくItemを取得
+    @account_id = params[:account_id]
     render partial: 'step2_form'
+    
   end
 
 
