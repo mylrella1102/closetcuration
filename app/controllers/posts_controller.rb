@@ -12,7 +12,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.new(post_params)
+    @post.account_id = params[:post][:account_id]
     if @post.save
       redirect_to root_path
     else
@@ -21,7 +23,6 @@ class PostsController < ApplicationController
   end
 
   def step2
-    puts "aaa"
     @step = 2
     @post = Post.new(account_id: params[:account_id]) # ステップ1で選択されたアカウントIDを使用して新しいPostオブジェクトを作成
     @items = Item.where(account_id: params[:account_id]) # 選択されたアカウントに紐づくItemを取得
@@ -63,7 +64,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:date, :weather_id, :low_id, :high_id, :content, item_ids: []).merge(user_id: current_user.id)
+    params.require(:post).permit(:date, :weather_id, :low_id, :high_id, :content, :account_id, item_ids: []).merge(user_id: current_user.id)
   end
 
 end

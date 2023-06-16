@@ -18,6 +18,7 @@
         </label>
       <% end %>
     </div>
+    <%= hidden_field_tag 'post[account_id]', params[:account_id] %>
     <p class="text-center next">
       <%= button_tag "次へ", class: "btn btn-primary", type: "button", id: "next" %>
     </p>

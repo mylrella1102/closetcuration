@@ -17,7 +17,10 @@
       <%= f.collection_select(:low_id, Low.all, :id, :name, {}, {class:"form-select mb-2"}) %>
       <%= f.collection_select(:high_id, High.all, :id, :name, {}, {class:"form-select mb-2"}) %>
       <%= f.text_area :content, class:"form-control mb-3", placeholder:"メモ" %>
-        <p class= "text-center"><%= f.submit "POST" ,class:"btn btn-primary", type: "button", onclick: "submitData()" %></p>
+      <%= hidden_field_tag 'post[account_id]', params.dig(:account_id) %>
+        <p class= "text-center">
+        <%= f.submit "POST" ,class:"btn btn-primary col-12" %>
+        </p>
     </div>
     </div>
   <% end %>
