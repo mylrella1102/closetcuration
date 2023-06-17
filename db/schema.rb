@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2023_06_02_060118) do
 
+  create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -49,8 +58,10 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
     t.integer "season_id"
     t.text "info"
     t.bigint "user_id", null: false
+    t.bigint "account_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_items_on_account_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -61,8 +72,10 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
     t.integer "high_id"
     t.text "content"
     t.bigint "user_id", null: false
+    t.bigint "account_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_posts_on_account_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -79,9 +92,12 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accounts", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "item_posts", "items"
   add_foreign_key "item_posts", "posts"
+  add_foreign_key "items", "accounts"
   add_foreign_key "items", "users"
+  add_foreign_key "posts", "accounts"
   add_foreign_key "posts", "users"
 end

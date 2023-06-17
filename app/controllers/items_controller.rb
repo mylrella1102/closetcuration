@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order('created_at DESC')
     @posts = Post.all.order('created_at DESC')
+    @accounts = Account.all
     if params[:category_id].present?
       @items = Item.where(category_id: params[:category_id]).order('created_at DESC')
     end
@@ -59,7 +60,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image, :name, :category_id, :color_id, :season_id, :info).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :name, :category_id, :color_id, :season_id, :info, :account_id).merge(user_id: current_user.id)
   end
   
 end
