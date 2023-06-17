@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order('created_at DESC')
     @posts = Post.all.order('created_at DESC')
+    @accounts = Account.all
     if params[:category_id].present?
       @items = Item.where(category_id: params[:category_id]).order('created_at DESC')
     end
