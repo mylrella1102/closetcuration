@@ -13,10 +13,16 @@
         <span>メモ：<%= @item.info %></span>
       <% end %>
     </div>
-    <%# <div class='star-btn'>
-      <%= image_tag "star.png", class:"star-icon me-2 " %>
-      <%# <span class='star-count'>0</span><br>
-    </div> %> 
+  <%= link_to account_path(@item.account.id), class: "text-decoration-none row-md " do %>
+    <div class="d-flex justify-content-center">
+      <% if @item.account.image.present? %>
+        <%= image_tag @item.account.image.variant(resize: '30x30'), class: "rounded-circle" %>
+      <% else %>
+        <%= image_tag "icon.png", variant: { resize: '30x30' }, class: "icon-resize2 rounded-circle" %>
+      <% end %>
+    </div>
+    <% end %>
+
     <div class="row d-flex justify-content-center">
       <div class="row col mt-3 d-flex justify-content-center">
         <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "btn bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill col-4 me-1" %>

@@ -1,14 +1,16 @@
 # アプリケーション名
 Closet Curation
 
-  
 # アプリケーション概要
 持っている服を管理したり、毎日の服装を記録することができる。
-
 
 # URL
 https://closetcuration.onrender.com
 # テスト用アカウント
+- Basic認証パスワード：1102
+- Basic認証ID：mylrella
+- メールアドレス：
+- パスワード：
 
 # 利用方法
 ## アイテム投稿
@@ -28,14 +30,34 @@ https://docs.google.com/spreadsheets/d/13ZZzcU2aa5nknpbithHA-t3CBU_1TlNqjyEZ5lhL
 # 実装した機能についての画像やGIFおよびその説明
 
 # 実装予定の機能
+- 検索機能
+- いいね機能
+- フォロー機能
 
 # データベース設計
-https://gyazo.com/4f46cfa308ed99961e7e3e8b2296100a
+[![Image from Gyazo](https://i.gyazo.com/9a8e25203991ddddde8296c6c3e0c127.png)](https://gyazo.com/9a8e25203991ddddde8296c6c3e0c127)
 
 # 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/f245215aaff93cee50b053aaca552f7a.png)](https://gyazo.com/f245215aaff93cee50b053aaca552f7a)
 
 # 開発環境
+- HTML&CSS
+- Ruby
+- Ruby on Rails
+- JavaScript
+- MySQL
+- render
+- Visual Studio Code
+- GitHub
 
 # ローカルでの動作方法
+以下のコマンドを順に実行。  
+% git clone https://github.com/mylrella1102/closetcuration  
+% cd xxxxxx  
+% bundle install  
+% yarn install  
 
 # 工夫したポイント
+- ビューの実装にBootStrapを導入した
+- 一人のユーザーに対してアカウントを複数持てるように設定した
+- JavaScriptを活用し、コーディネートの投稿するときには指定したアカウントが持っているアイテムのみが表示されるように設定した

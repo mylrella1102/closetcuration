@@ -4,11 +4,11 @@ class AccountsController < ApplicationController
   def index
     @accounts = Account.all
   end
-
+  
   def new
     @account = Account.new
   end
-
+  
   def create
     @account = Account.new(account_params)
     if @account.save
@@ -17,9 +17,11 @@ class AccountsController < ApplicationController
       render :new
     end
   end
-
+  
   def show
     @account = Account.find(params[:id])
+    @items = @account.items.order('created_at DESC')
+    @posts = @account.posts.order('created_at DESC')
   end
 
   def edit
