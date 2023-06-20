@@ -1,14 +1,16 @@
 # アプリケーション名
 Closet Curation
 
-  
 # アプリケーション概要
 持っている服を管理したり、毎日の服装を記録することができる。
-
 
 # URL
 https://closetcuration.onrender.com
 # テスト用アカウント
+- Basic認証パスワード：1102
+- Basic認証ID：mylrella
+- メールアドレス：
+- パスワード：
 
 # 利用方法
 ## アイテム投稿
