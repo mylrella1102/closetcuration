@@ -24,13 +24,23 @@
 }
 
 .img-size {
-  height: 200px;
-  width: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  min-width: 200px;
+  max-height: 200px;
 }
 
 .main {
   height: 100%;
 }
+
+.main-img {
+  object-fit: cover;
+  opacity: 30%;
+  width: 100vw;
+  height: 100vh;
+}
+
 
 #step1-form,
 .form-2 {

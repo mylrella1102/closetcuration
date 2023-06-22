@@ -1,5 +1,5 @@
 <%= render "shared/sidebar" %>
-<div class="bg-light border rounded p-4 mx-auto">
+<div class="bg-light rounded shadow p-4 mx-auto">
   <div class = "d-flex flex-column text-center">
     <div class = "post-img">
       <%= image_tag @item.image.variant(resize: '200x200') %> 
@@ -23,11 +23,15 @@
     </div>
     <% end %>
 
-    <div class="row d-flex justify-content-center">
-      <div class="row col mt-3 d-flex justify-content-center">
-        <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "btn bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill col-4 me-1" %>
-        <%= link_to "削除", item_path(@item.id), method: :delete, class: "btn bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill col-4" %>
-      </div>
-    </div>
+    <% if user_signed_in? %>
+      <% if current_user.id == @item.user_id %>
+        <div class="row d-flex justify-content-center">
+          <div class="row col mt-3 d-flex justify-content-center">
+            <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "btn bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill col-4 me-1" %>
+            <%= link_to "削除", item_path(@item.id), method: :delete, class: "btn bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill col-4" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

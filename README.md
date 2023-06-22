@@ -5,27 +5,38 @@ Closet Curation
 持っている服を管理したり、毎日の服装を記録することができる。
 
 # URL
-https://closetcuration.onrender.com
+[clcosetcuration](https://closetcuration.onrender.com)
 # テスト用アカウント
 - Basic認証パスワード：1102
 - Basic認証ID：mylrella
-- メールアドレス：
-- パスワード：
+- メールアドレス：test@jp
+- パスワード：qqq111
 
 # 利用方法
+## アカウント登録
+1. トップページのサイドバーのAccountの「AccountNEW」からアカウントの新規登録をする
+2. プロフィール写真、名前、生年月日を登録する
+3. サイドバーのAccountでアカウント一覧を参照することができる
 ## アイテム投稿
-1. トップページのサイドバーのMenuからユーザーの新規登録を行う
-2. アカウントの登録（例.自分、子供①、子供②）
-2. 「post ITEM」ボタンからアイテムの内容を入力し投稿する
-3. 「post OOTD」ボタンから今日の服装の組み合わせを投稿する
+1. 「post ITEM」ボタンからアイテムの内容を入力し投稿する
+2. アイテムの持ち主（アカウントから選択）、画像、名前、カテゴリー、色、季節、メモを登録する
+3. サイドバーのItemからアイテム一覧を参照することができる
+## コーディネート投稿
+1. 「post OOTD」ボタンから今日の服装の組み合わせを投稿する
+2. アカウント、日付、アイテム、天気、最高気温、最低気温、メモを登録できる
+3. トップページからコーディネート一覧を参照することができる
+## カレンダー機能
+1. サイドバーのCalendarからカレンダーを表示する
+1. コーディネート投稿した日がカレンダー上に表示される
 
 # アプリケーションを作成した背景
+## 
 - 毎日の服装の組み合わせに悩む人
 - 小さい子供がいる人
 - クローゼットの中身を確認したい人
 
 # 洗い出した要件
-https://docs.google.com/spreadsheets/d/13ZZzcU2aa5nknpbithHA-t3CBU_1TlNqjyEZ5lhLuHk/edit?usp=sharing
+[要件定義書](https://docs.google.com/spreadsheets/d/13ZZzcU2aa5nknpbithHA-t3CBU_1TlNqjyEZ5lhLuHk/edit?usp=sharing)
 
 # 実装した機能についての画像やGIFおよびその説明
 
@@ -53,7 +64,7 @@ https://docs.google.com/spreadsheets/d/13ZZzcU2aa5nknpbithHA-t3CBU_1TlNqjyEZ5lhL
 # ローカルでの動作方法
 以下のコマンドを順に実行。  
 % git clone https://github.com/mylrella1102/closetcuration  
-% cd xxxxxx  
+% cd closetcuration  
 % bundle install  
 % yarn install  
 

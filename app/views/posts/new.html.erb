@@ -7,7 +7,7 @@
     <div class="add-form row p-3">
     <div class="d-flex justify-content-center flex-column">
       <% Account.all.each do |account| %>
-        <label class="form-radio mb-2 text-center">
+        <label class="form-radio mb-2">
           <input class="form-radio-input" type="radio" name="post[account_id]" value="<%= account.id %>">
           <% if account.image.present? %>
             <%= image_tag account.image.variant(resize: '50x50'), class: "rounded-circle" %>

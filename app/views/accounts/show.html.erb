@@ -1,7 +1,7 @@
 <%= render "shared/sidebar" %>
-<main class="d-flex flex-column main overflow-auto w-100">
+<main class="d-flex flex-column main overflow-auto w-100 bg-color">
   <div class="p-4 row">
-      <div class = "post-img col-4">
+      <div class = "col-4 d-flex justify-content-center align-items-center">
           <% if @account.image.present? %>
           <%= image_tag @account.image.variant(resize: '200x200'), class: "rounded-circle" %>
           <% else %>
@@ -16,28 +16,26 @@
           <% end %>
         </div>
           <div class="col mt-3">
-            <%= link_to "編集", edit_account_path(@account.id), method: :get, class: "btn bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill col-4 me-1" %>
-            <%= link_to "削除", account_path(@account.id), method: :delete, data: {confirm:"このアカウントを削除してよろしいですか？"}, class: "btn bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill col-4" %>
+            <%= link_to "編集", edit_account_path(@account.id), method: :get, class: "btn bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill col-4 me-1 shadow" %>
+            <%= link_to "削除", account_path(@account.id), method: :delete, data: {confirm:"このアカウントを削除してよろしいですか？"}, class: "btn bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill col-4 shadow" %>
           </div>
         </div>
       </div>
   </div>
 
-  <div class = "row border overflow-x-scroll flex-nowrap h-25 d-flex justify-content-center">
+  <div class = "row overflow-x-scroll flex-nowrap d-flex justify-content-center h-30 p-3">
     <% @items.each do |item|%>
-      <%= link_to item_path(item.id), class: "text-decoration-none col-2" do %>
-      <div class= "mx-auto">
+      <%= link_to item_path(item.id), class: "text-decoration-none col-2 m-1 item-border d-flex justify-content-center align-items-center" do %>
         <%= image_tag item.image.variant(resize: '90x90') %>
-        </div>
       <% end %>
     <% end %>
   </div>
 
 
-    <div class = "row border overflow-x-scroll flex-nowrap h-75">
+    <div class = "row overflow-x-scroll flex-nowrap h-70 p-3">
     <% @posts.each do |post|%>
-      <%= link_to post_path(post.id), class: "text-decoration-none col-md-4 row-md" do %>
-        <div class="g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative row">
+      <%= link_to post_path(post.id), class: "text-decoration-none col-md-4 row-md m-2 p-2 post-border" do %>
+        <div class="g-0  rounded flex-md-row mb-4 h-md-250 position-relative row">
           <div class="col-6 p-4 position-static">
 
             <h5 class="mb-1 text-muted"><%= post.date%></h5>

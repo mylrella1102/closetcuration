@@ -6,11 +6,18 @@
 
   <div class = "row">
     <% @items.each do |item|%>
-      <%= link_to item_path(item.id), class: "text-decoration-none col-lg-4 col-md-6 row-md " do %>
-      <div class= "img-size mx-auto">
+    <% color_index = (item.account.id - 1) % 5 + 1 %>
+    <% bg_color = "bg-#{color_index}" %>
+    <% if item.account.id >= 6 %>
+      <% bg_color += " bg-#{(item.account.id - 6) % 5 + 1}" %>
+    <% end %>
+
+      <%= link_to item_path(item.id), class: "text-decoration-none col-lg-3 col-md-6 row-md " do %>
+        <div class="g-0 rounded <%= bg_color %> flex-md-row mb-4 h-md-250 position-relative row shadow-main">
+
+      <div class= "img-size mx-auto d-flex justify-content-center">
         <%= image_tag item.image.variant(resize: '200x200') %>
         </div>
-        <div class="g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative row">
           <div class="position-static p-3 row">
             <h5 class="mb-1 text-muted col-10"><%= item.name%></h4>
             <div class="item col-2">

@@ -1,5 +1,5 @@
 <%= render "shared/sidebar" %>
-<div class="bg-light border rounded p-4 mx-auto">
+<div class="bg-light rounded p-4 mx-auto shadow">
   <div class = "d-flex flex-column text-center">
     <div class = "post-img">
       <% @post.items.each do |item| %>
@@ -25,8 +25,12 @@
     </div>
     <% end %>
 
-  <div class="row mt-3 justify-content-center">
-    <%= link_to "編集", edit_post_path(@post.id), method: :get, class: "btn bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill col-4 me-1" %>
-    <%= link_to "削除", post_path(@post.id), method: :delete, class: "btn bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill col-4" %>
-  </div>
+    <% if user_signed_in? %>
+      <% if current_user.id == @post.user_id %>
+        <div class="row mt-3 justify-content-center">
+          <%= link_to "編集", edit_post_path(@post.id), method: :get, class: "btn bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill col-4 me-1" %>
+          <%= link_to "削除", post_path(@post.id), method: :delete, class: "btn bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill col-4" %>
+        </div>
+      <% end %>
+    <% end%>
 </div>
