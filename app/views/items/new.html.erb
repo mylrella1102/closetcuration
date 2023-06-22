@@ -1,5 +1,6 @@
 <%= render "shared/sidebar" %>
-<%= form_with model: @item, url:items_path, local: true, class: "mx-auto col-4" do |f| %>
+<body class="bg-color">
+<%= form_with model: @item, url:items_path, local: true, class: "mx-auto p-5 bg-white border rounded col-4 h-75 overflow-scroll" do |f| %>
   <div class="item-box justify-content-center">
     <p class="text-center mb-3 fs-2">アイテム登録</p>
 
@@ -28,3 +29,4 @@
     <p class= "text-center"><%= f.submit "POST" ,class:"btn btn-primary col-12" %></p>
   </div>
 <% end %>
+</body>

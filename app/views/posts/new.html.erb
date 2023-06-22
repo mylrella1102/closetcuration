@@ -1,8 +1,9 @@
 <%= render "shared/sidebar" %>
-<div class= "d-flex justify-content-end col-12 w-25">
+<body class="bg-color">
+<div class= "d-flex justify-content-end col-12 w-25 ">
 <%= form_with model: @post, url: posts_path, local: true, class: "p-5 me-0", id: "step1-form" do |f| %>
-  <div class="post-box">
-    <p class="text-center mb-3 fs-2">アカウント選択</p>
+  <div class="post-box bg-light">
+    <p class="text-center mb-3 fs-3">アカウント選択</p>
 
     <div class="add-form row p-3">
     <div class="d-flex justify-content-center flex-column">
@@ -19,14 +20,15 @@
       <% end %>
     </div>
     <%= hidden_field_tag 'post[account_id]', params[:account_id] %>
-    <p class="text-center next">
+    <p class="text-center next mt-3">
       <%= button_tag "次へ", class: "btn btn-primary", type: "button", id: "next" %>
     </p>
     </div>
   </div>
 <% end %>
 </div>
+</body>
 
-    <div id="step2-form-container" class="form-2 col-12 w-50" >
+    <div id="step2-form-container" class="form-2 col-12 w-50 bg-color" >
       <!-- ステップ2のフォームがここに表示されます -->
     </div>

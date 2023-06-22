@@ -8,7 +8,17 @@
   width: 30px;
 }
 
-.item-border {
+.item-border,
+.item-border1 {
+  border-radius: 50%;
+  background-color: #F0F0F3;
+  box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgba(174, 174, 192, 0.4), inset -10px -10px 10px rgba(174, 174, 192, 0.25), inset 10px 10px 10px #ffffff;
+}
+
+.item-border2 {
+  min-width: 250px;
+  max-width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: #F0F0F3;
   box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgba(174, 174, 192, 0.4), inset -10px -10px 10px rgba(174, 174, 192, 0.25), inset 10px 10px 10px #ffffff;
@@ -18,7 +28,8 @@
   box-shadow: inset -10px -10px 10px rgba(255, 255, 255, 0.7), inset 10px 10px 10px rgba(174, 174, 192, 0.2);
 }
 
-.post-border {
+.post-border,
+.post-border1 {
   border: #F0F0F3;
   box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgba(174, 174, 192, 0.4), inset -10px -10px 10px rgba(174, 174, 192, 0.25), inset 10px 10px 10px #ffffff;
 }
@@ -45,14 +56,23 @@
 }
 
 .account-new {
-  max-height: 220px;
-  min-height: 220px;
-  max-width: 220px;
-  min-width: 220px;
-  border-radius: 50%;
+  max-height: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  min-width: 200px;
 }
 
-.post-img {
-  height: 250px;
-  width: 250px;
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.fixed-item {
+  position: sticky;
+  left: 0;
+  background-color: #cde4ed;
+  z-index: 2;
+}
+
+.scrollable-items {
+  flex-grow: 1;
 }

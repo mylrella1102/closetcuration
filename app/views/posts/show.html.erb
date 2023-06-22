@@ -1,7 +1,8 @@
 <%= render "shared/sidebar" %>
+<body class="bg-color">
 <div class="bg-light rounded p-4 mx-auto shadow">
   <div class = "d-flex flex-column text-center">
-    <div class = "post-img">
+    <div class = "aaa">
       <% @post.items.each do |item| %>
         <%= image_tag item.image.variant(resize: '200x200') %> 
       <% end %>
@@ -34,3 +35,4 @@
       <% end %>
     <% end%>
 </div>
+</body>

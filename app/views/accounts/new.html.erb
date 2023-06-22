@@ -33,12 +33,14 @@
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="bg-color">
   <%= render "shared/sidebar" %>
 
 <main class="form-signin text-center">
   <%= form_with model: @account, url: accounts_path, id: 'new_account', local: true do |f| %>
-    <h1 class="h3 mb-3 fw-normal">アカウントの追加</h1>
+    <%= image_tag "main_logo1.png", class: "p-1 mx-auto" %>
+
+    <h1 class="h3 mt-5 mb-3 fw-normal">アカウント追加</h1>
 
     <%# <%= render 'devise/shared/error_messages', model: f.object %>
 
