@@ -33,12 +33,13 @@
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
   </head>
-  <body class="text-center">
-    
-<main class="form-signin">
+  <body class="bg-color">
+  <%= render "shared/sidebar" %>
+
+<main class="form-signin text-center">
   <%= form_with model: @account, id: 'new_account', local: true do |f| %>
         <%= image_tag "main_logo1.png", class: "p-1 mx-auto" %>
-    <h1 class="h3 mb-3 fw-normal">アカウントの編集</h1>
+    <h1 class="h3 mt-5 mb-3 fw-normal">アカウント編集</h1>
 
     <label class="form-image col-12">
       <%= f.file_field :image, class: 'form-control mb-2' %>
@@ -54,7 +55,6 @@
     </div>
 
     <button class="w-100 btn btn-lg bg-primary-subtle border border-primary-subtle text-primary-emphasis" type="submit">変更</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
   <% end %>
 </main>
 

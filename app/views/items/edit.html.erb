@@ -1,7 +1,8 @@
 <%= render "shared/sidebar" %>
-<%= form_with model: @item, local: true, class: "mx-auto col-4" do |f| %>
+<body class="bg-color">
+<%= form_with model: @item, local: true, class: "mx-auto p-5 bg-white border rounded col-4 h-75 overflow-scroll" do |f| %>
   <div class="item-box justify-content-center">
-    <p class="text-center mb-3 fs-2">アイテムを編集する</p>
+    <p class="text-center mb-3 fs-3">アイテム編集</p>
 
       <div class = "add-form row p-3">
       <% Account.all.each do |account| %>
@@ -30,3 +31,4 @@
     <p class= "text-center"><%= f.submit "POST" ,class:"btn btn-primary col-12" %></p>
   </div>
 <% end %>
+</body>

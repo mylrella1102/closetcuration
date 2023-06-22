@@ -38,18 +38,20 @@
     <link href="blog.css" rel="stylesheet">
 
   </head>
-<body>
-    
+<body class="w-100 bg-color">
+    <main  class="top-page">
   <%= render "shared/sidebar" %>
 
-<main class="container d-flex flex-column overflow-auto img-1 px-5 ">
-
+<div class="container d-flex flex-column overflow-auto img-1 px-5 ">
   <%= render "shared/header" %>
 
-  <div class = "row">
+  <div class = "row w-100">
     <% @posts.each do |post|%>
+    <% color_index = (post.account.id - 1) % 6 + 1 %>
+    <% bg_color = "bg-#{color_index}" %>
       <%= link_to post_path(post.id), class: "text-decoration-none col-md-4 row-md" do %>
-        <div class="g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative row">
+      
+        <div class="g-0 rounded <%= bg_color %> flex-md-row mb-4  h-md-250 position-relative row shadow-main">
           <div class="col-6 p-4 position-static">
 
             <h5 class="mb-1 text-muted"><%= post.date%></h5>
@@ -75,6 +77,7 @@
       <% end %>
     <% end %>
   </div>
+</div>
 </main>
     
   </body>

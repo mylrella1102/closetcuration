@@ -2,7 +2,7 @@ class Category < ActiveHash::Base
   self.data = [
     { id: 1, name: 'カテゴリー' },
     { id: 2, name: 'トップス' },
-    { id: 3, name: 'ジャケット・アウター' },
+    { id: 3, name: 'アウター' },
     { id: 4, name: 'パンツ' },
     { id: 5, name: 'スカート' },
     { id: 6, name: 'ワンピース' },

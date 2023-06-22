@@ -33,12 +33,13 @@
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="bg-color">
+    <%= render "shared/sidebar" %>
     
 <main class="form-signin">
   <%= form_with model: @user, url: user_session_path, id: 'new_user', local: true do |f| %>
         <%= image_tag "main_logo1.png", class: "p-1 mx-auto" %>
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
 
     <%= render 'devise/shared/error_messages', model: f.object %>
 
@@ -52,13 +53,13 @@
       <label for="floatingPassword">Password</label>
     </div>
 
-    <div class="checkbox mb-3">
+    <div class="checkbox mb-3 text-center">
       <label>
-        <input type="checkbox" value="remember-me"> Remember me
+        <input type="checkbox" value="remember-me" > Remember me
       </label>
     </div>
     <button class="w-100 btn btn-lg bg-primary-subtle border border-primary-subtle text-primary-emphasis" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2023</p>
   <% end %>
 </main>
 
