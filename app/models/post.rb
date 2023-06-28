@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   belongs_to :account
-  has_many :item_posts
+  has_many :item_posts, dependent: :destroy
   has_many :items, through: :item_posts
 
   def start_time

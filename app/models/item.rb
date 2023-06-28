@@ -11,7 +11,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   belongs_to :account
-  has_many :item_posts
+  has_many :item_posts, dependent: :destroy
   has_many :posts, through: :item_posts
 
 end

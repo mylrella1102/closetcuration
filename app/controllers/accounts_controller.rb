@@ -43,6 +43,7 @@ class AccountsController < ApplicationController
   def destroy
     @account = Account.find(params[:id])
     if current_user.id == @account.user_id
+      @account.posts.destroy_all
       @account.destroy
     end
     redirect_to accounts_path
