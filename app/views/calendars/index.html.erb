@@ -6,10 +6,15 @@
 
   <%= week_calendar events: @posts do |date, posts| %>
     <%= date.day %><br>
-      <%# <% posts.each do |post| %>
-    <%# <%= link_to date.day, post_path(post) %>
-    <%# <% end %>
-
+      <% posts.each do |post| %>
+        <%= link_to post_path(post), class: "text-decoration-none" do %>
+            <% if post.account.image.present? %>
+              <%= image_tag post.account.image.variant(resize: '30x30'), class: "rounded-circle m-2" %>
+            <% else %>
+              <%= image_tag "icon.png", variant: { resize: '30x30' }, class: "icon-resize2 rounded-circle m-2" %>
+            <% end %>
+          <% end %>
+      <% end %>
   <% end %>
   
 </main>

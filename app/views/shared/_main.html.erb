@@ -39,46 +39,46 @@
 
   </head>
 <body class="w-100 bg-color">
-    <main  class="top-page">
+  <main  class="top-page">
   <%= render "shared/sidebar" %>
 
-<div class="container d-flex flex-column overflow-auto img-1 px-5 ">
-  <%= render "shared/header" %>
+  <div class="d-flex flex-column img-1 px-5 ">
+    <%= render "shared/header" %>
 
-  <div class = "row w-100">
-    <% @posts.each do |post|%>
-    <% color_index = (post.account.id - 1) % 6 + 1 %>
-    <% bg_color = "bg-#{color_index}" %>
-      <%= link_to post_path(post.id), class: "text-decoration-none col-md-4 row-md" do %>
-      
-        <div class="g-0 rounded <%= bg_color %> flex-md-row mb-4  h-md-250 position-relative row shadow-main">
-          <div class="col-6 p-4 position-static">
+    <div class = "row overflow-scroll">
+      <% @posts.each do |post|%>
+      <% color_index = (post.account.id - 1) % 6 + 1 %>
+      <% bg_color = "bg-#{color_index}" %>
+        <%= link_to post_path(post.id), class: "text-decoration-none col-md-4 row-md" do %>
+        
+          <div class="g-0 rounded <%= bg_color %> flex-md-row mb-4  h-md-250 position-relative row shadow-main">
+            <div class="col-6 p-4 position-static">
 
-            <h5 class="mb-1 text-muted"><%= post.date%></h5>
-            <div class="row mb-1">
-              <p class="card-text mb-auto text-muted"><%= post.low.name %>℃~<%= post.high.name %>℃ <%= post.weather.name %></p>
-              <p class="deco card-text mb-auto text-muted"><%= post.content %></p>
-            </div>
-          <div class="item col-2">
-          <% if post.account.image.present? %>
-            <%= image_tag post.account.image.variant(resize: '30x30'), class: "rounded-circle" %>
-          <% else %>
-            <%= image_tag "icon.png", variant: { resize: '30x30' }, class: "icon-resize2 rounded-circle" %>
-          <% end %>
-          </div>
-
-          </div>
-          <div class="col-6 d-none d-lg-block align-self-center">
-            <% post.items.each do |item| %>
-              <%= image_tag item.image.variant(resize: '90x90') %>
+              <h5 class="mb-1 text-muted"><%= post.date%></h5>
+              <div class="row mb-1">
+                <p class="card-text mb-auto text-muted"><%= post.low.name %>℃~<%= post.high.name %>℃ <%= post.weather.name %></p>
+                <p class="deco card-text mb-auto text-muted"><%= post.content %></p>
+              </div>
+            <div class="item col-2">
+            <% if post.account.image.present? %>
+              <%= image_tag post.account.image.variant(resize: '30x30'), class: "rounded-circle" %>
+            <% else %>
+              <%= image_tag "icon.png", variant: { resize: '30x30' }, class: "icon-resize2 rounded-circle" %>
             <% end %>
+            </div>
+
+            </div>
+            <div class="col-6 d-none d-lg-block align-self-center">
+              <% post.items.each do |item| %>
+                <%= image_tag item.image.variant(resize: '90x90') %>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
-</main>
+  </main>
     
-  </body>
+</body>
 </html>

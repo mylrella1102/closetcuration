@@ -8,6 +8,7 @@
     <div class="add-form row p-3">
     <div class="d-flex justify-content-center flex-column">
       <% Account.all.each do |account| %>
+      <% items = account.items %>
         <label class="form-radio mb-2">
           <input class="form-radio-input" type="radio" name="post[account_id]" value="<%= account.id %>">
           <% if account.image.present? %>
@@ -16,6 +17,10 @@
             <%= image_tag "icon.png", variant: { resize: '50x50' }, class: "icon-resize rounded-circle" %>
           <% end %>
           <%= account.name %>
+          <% if items.empty? %>
+            ※アイテムがありません
+          <% end %>
+
         </label>
       <% end %>
     </div>

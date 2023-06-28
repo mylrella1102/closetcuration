@@ -8,6 +8,14 @@
   width: 30px;
 }
 
+.shadow-btn {
+  box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgba(174, 174, 192, 0.4), inset -10px -10px 10px rgba(174, 174, 192, 0.25), inset 10px 10px 10px #ffffff;
+}
+
+.shadow-btn:hover {
+  box-shadow: inset -10px -10px 10px rgba(255, 255, 255, 0.7), inset 10px 10px 10px rgba(174, 174, 192, 0.2);
+}
+
 .item-border,
 .item-border1 {
   border-radius: 50%;

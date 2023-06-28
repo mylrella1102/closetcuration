@@ -1,10 +1,9 @@
   <%= render "shared/sidebar" %>
-
-<main class="container d-flex flex-column overflow-auto img-1 px-5 bg-color">
+<main class="h-100 d-flex flex-column justify-content-center img-1 px-5 bg-color">
 
     <%= render "shared/header" %>
 
-  <div class = "row">
+  <div class = "row overflow-scroll">
     <% @items.each do |item|%>
     <% color_index = (item.account.id - 1) % 5 + 1 %>
     <% bg_color = "bg-#{color_index}" %>
@@ -12,7 +11,7 @@
       <% bg_color += " bg-#{(item.account.id - 6) % 5 + 1}" %>
     <% end %>
 
-      <%= link_to item_path(item.id), class: "text-decoration-none col-lg-3 col-md-6 row-md " do %>
+      <%= link_to item_path(item.id), class: "text-decoration-none col-lg-3 col-md-6 row-md" do %>
         <div class="g-0 rounded <%= bg_color %> flex-md-row mb-4 h-md-250 position-relative row shadow-main">
 
       <div class= "img-size mx-auto d-flex justify-content-center">
