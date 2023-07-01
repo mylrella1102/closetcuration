@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :account do
-    nickname {Faker::Name.last_name}
-    email {Faker::Internet.free_email}
-    password {Faker::Internet.password(min_length: 6)}
-    password_confirmation {password}
+    name {Faker::Name.last_name}
+    date {"2023/06/30"}
+    association :user
+
   end
 end
