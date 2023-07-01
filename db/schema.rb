@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.integer "category_id", null: false
     t.integer "color_id"
     t.integer "season_id"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2023_06_02_060118) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "date"
+    t.date "date", null: false
     t.integer "weather_id"
     t.integer "low_id"
     t.integer "high_id"
