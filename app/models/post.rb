@@ -4,6 +4,9 @@ class Post < ApplicationRecord
   belongs_to_active_hash :high
   belongs_to_active_hash :low
 
+  validates :date, presence: true
+
+
   belongs_to :user
   belongs_to :account
   has_many :item_posts, dependent: :destroy
