@@ -5,4 +5,9 @@ class CalendarsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @account = Account.find(params[:id])
+    @items = @account.items.order('created_at DESC')
+    @posts = @account.posts.order('created_at DESC')
+  end
 end
